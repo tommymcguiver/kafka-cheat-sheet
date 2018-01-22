@@ -100,7 +100,9 @@ kafka-avro-console-consumer --topic position-reports --new-consumer --bootstrap-
 
 List Groups
 ```
-kafka-consumer-groups --new-consumer --list --bootstrap-server localhost:9092
+kafka-consumer-groups --new-consumer --list --bootstrap-server localhost:9092 (old api)
+bin/kafka-consumer-groups.sh --new-consumer --bootstrap-server localhost:9092 --list (new api)
+
 ```
 Describe Groups
 ```
