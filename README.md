@@ -98,13 +98,19 @@ kafka-avro-console-consumer --topic position-reports --new-consumer --bootstrap-
 
 ## Consumers admin operations
 
-List Groups
+List Consumer Groups
 ```
-kafka-consumer-groups --new-consumer --list --bootstrap-server localhost:9092 (old api)
-bin/kafka-consumer-groups.sh --new-consumer --bootstrap-server localhost:9092 --list (new api)
+kafka-consumer-groups.sh --zookeeper localhost:2181 --list (old api)
+kafka-consumer-groups.sh --new-consumer --bootstrap-server localhost:9092 --list (new api)
 
 ```
-Describe Groups
+
+Delete Consumer Group
+```
+kafka-consumer-groups.sh --zookeeper localhost:2181 --delete --group DomoStreamAPI
+```
+
+Describe Consumer Groups
 ```
 kafka-consumer-groups --bootstrap-server localhost:9092 --describe --group testgroup
 ```
